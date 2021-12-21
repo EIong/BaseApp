@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".mvc.MvcActivity"
+    tools:ignore="HardcodedText">
+
+    <FrameLayout
+        android:id="@+id/flContent"
+        android:layout_width="600pt"
+        android:layout_height="900pt"
+        android:background="@color/purple_700"
+        android:elevation="8pt"
+        app:layout_constraintBottom_toTopOf="@id/cdvLoadFragmentStatic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cdvLoadFragmentStatic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:cardCornerRadius="16pt"
+        app:cardElevation="4pt"
+        app:layout_constraintBottom_toTopOf="@+id/cdvLoadFragmentDynamic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/flContent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16pt"
+            android:text="静态加载Fragment"
+            android:textColor="@color/black"
+            android:textSize="36pt" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cdvLoadFragmentDynamic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:cardCornerRadius="16pt"
+        app:cardElevation="4pt"
+        app:layout_constraintBottom_toTopOf="@id/cdvRequestPermission"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cdvLoadFragmentStatic">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16pt"
+            android:text="动态加载Fragment"
+            android:textColor="@color/black"
+            android:textSize="36pt" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cdvRequestPermission"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:cardCornerRadius="16pt"
+        app:cardElevation="4pt"
+        app:layout_constraintBottom_toTopOf="@+id/cdvRequestData"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cdvLoadFragmentDynamic">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16pt"
+            android:text="请求权限"
+            android:textColor="@color/black"
+            android:textSize="36pt" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cdvRequestData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:cardCornerRadius="16pt"
+        app:cardElevation="4pt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cdvRequestPermission">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16pt"
+            android:text="请求数据"
+            android:textColor="@color/black"
+            android:textSize="36pt" />
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.ViewLogActivity"
+    tools:ignore="HardcodedText">
+
+    <HorizontalScrollView
+        android:id="@+id/scrLogTab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/llLogTab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#F0F0F0"
+            android:orientation="horizontal" />
+    </HorizontalScrollView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvLog"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toTopOf="@id/skbLog"
+        app:layout_constraintTop_toBottomOf="@+id/scrLogTab" />
+
+    <SeekBar
+        android:id="@+id/skbLog"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@null"
+        android:progressDrawable="@drawable/drawable_progress"
+        android:thumb="@null"
+        app:layout_constraintBottom_toTopOf="@id/llLogSearch" />
+
+    <TextView
+        android:id="@+id/tvProgress"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="0%"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/skbLog"
+        app:layout_constraintEnd_toEndOf="@id/skbLog"
+        app:layout_constraintStart_toStartOf="@+id/skbLog"
+        app:layout_constraintTop_toTopOf="@id/skbLog" />
+
+    <LinearLayout
+        android:id="@+id/llLogSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/tvSearchUp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/drawable_search_btn"
+            android:gravity="center"
+            android:paddingHorizontal="10dp"
+            android:text="往上"
+            android:textColor="@android:color/white"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tvSearchDown"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="10dp"
+            android:background="@drawable/drawable_search_btn"
+            android:gravity="center"
+            android:paddingHorizontal="10dp"
+            android:text="往下"
+            android:textColor="@android:color/white"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/etSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/drawable_search_edit"
+            android:hint="搜索"
+            android:maxLines="3"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="6dp"
+            android:textColor="@android:color/black"
+            android:textColorHint="#CCCCCC"
+            android:textCursorDrawable="@drawable/drawable_cursor"
+            android:textSize="13sp" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
