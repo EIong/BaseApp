@@ -16,21 +16,21 @@ import com.eiong.baseapp.manager.BaseManager
  */
 interface BaseView : View.OnClickListener {
     /**
-     * 初始化
+     * 初始化操作
      */
     fun initialize(savedInstanceState: Bundle?) {}
 
     /**
-     * 获取加载状态适配器
+     * 获取状态加载适配器
      *
-     * @return 加载状态适配器
+     * @return 状态加载适配器
      */
     fun getLoadingAdapter(): Gloading.Adapter {
         return BaseManager.loadingAdapter
     }
 
     /**
-     * 弹出消息对话框
+     * 消息弹窗
      *
      * @param message   消息内容
      * @param cancel    取消按钮文本
@@ -98,63 +98,63 @@ interface BaseView : View.OnClickListener {
     )
 
     /**
-     * 加载中
+     * 显示加载中
      */
     fun showLoading()
 
     /**
-     * 加载成功
+     * 显示加载成功
      */
     fun showSuccess()
 
     /**
-     * 加载失败
+     * 显示加载失败
      *
-     * @param retry 重试任务
+     * @param retry 重试操作
      */
     fun showFailed(retry: Runnable?)
 
     /**
-     * 无数据
+     * 显示无数据
      *
-     * @param retry 重试任务
+     * @param retry 重试操作
      */
     fun showEmpty(retry: Runnable?)
 
     /**
-     * 加载中（指定视图）
+     * 指定View上显示加载中
      *
-     * @param view 指定的视图
+     * @param view 指定View
      */
     fun showLoadingOverView(view: View)
 
     /**
-     * 加载成功（指定视图）
+     * 指定View上显示加载成功
      *
-     * @param view 指定的视图
+     * @param view 指定View
      */
     fun showSuccessOverView(view: View)
 
     /**
-     * 加载失败（指定视图）
+     * 指定View上显示加载失败
      *
-     * @param view  指定的视图
-     * @param retry 重试任务
+     * @param view  指定View
+     * @param retry 重试操作
      */
     fun showFailedOverView(view: View, retry: Runnable?)
 
     /**
-     * 无数据（指定视图）
+     * 指定View上显示无数据
      *
-     * @param view  指定的视图
-     * @param retry 重试任务
+     * @param view  指定View
+     * @param retry 重试操作
      */
     fun showEmptyOverView(view: View, retry: Runnable?)
 
     /**
      * 添加点击事件
      *
-     * @param views 添加点击事件的视图
+     * @param views 添加点击事件的View
      */
     fun addClick(vararg views: View) {
         views.forEach {
@@ -165,9 +165,9 @@ interface BaseView : View.OnClickListener {
     override fun onClick(v: View) {}
 
     /**
-     * 显示视图
+     * 显示View
      *
-     * @param views 显示的视图
+     * @param views 显示的View
      */
     fun showViews(vararg views: View) {
         views.forEach {
@@ -176,9 +176,9 @@ interface BaseView : View.OnClickListener {
     }
 
     /**
-     * 隐藏视图（INVISIBLE）
+     * 隐藏View（INVISIBLE）
      *
-     * @param views 隐藏的视图
+     * @param views 隐藏的View
      */
     fun hideViews(vararg views: View) {
         views.forEach {
@@ -187,9 +187,9 @@ interface BaseView : View.OnClickListener {
     }
 
     /**
-     * 隐藏视图（GONE）
+     * 隐藏View（GONE）
      *
-     * @param views 隐藏的视图
+     * @param views 隐藏的View
      */
     fun goneViews(vararg views: View) {
         views.forEach {

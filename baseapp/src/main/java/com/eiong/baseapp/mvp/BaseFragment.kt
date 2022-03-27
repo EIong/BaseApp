@@ -11,12 +11,12 @@ import java.lang.reflect.ParameterizedType
  *
  * @author EIong
  *
- * @param VB 绑定视图
- * @param P  数据处理
+ * @param VB ViewBinding
+ * @param P  Presenter
  */
 open class BaseFragment<VB : ViewBinding, P : BaseContract.BasePresenter> : BaseFragment<VB>(),
     BaseContract.BaseView {
-    /** 数据处理 */
+    /** Presenter对象 */
     protected val p: P by lazy {
         val type = javaClass.genericSuperclass as ParameterizedType
         val pClass = type.actualTypeArguments[1] as Class<*>

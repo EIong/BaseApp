@@ -8,14 +8,14 @@ import java.lang.ref.WeakReference
  *
  * @author EIong
  *
- * @param V 视图
+ * @param V View
  */
 open class BasePresenter<V : BaseContract.BaseView> : BaseContract.BasePresenter {
-    /** 视图 */
+    /** View对象 */
     protected lateinit var v: V
     private lateinit var vWR: WeakReference<V>
 
-    /** 生命周期 */
+    /** LifecycleOwner对象 */
     protected lateinit var lo: LifecycleOwner
     private lateinit var loWR: WeakReference<LifecycleOwner>
 

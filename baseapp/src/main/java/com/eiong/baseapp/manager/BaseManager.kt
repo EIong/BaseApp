@@ -29,7 +29,7 @@ object BaseManager {
     /** 屏幕适配参数（默认1080） */
     var adaptScreenValue = 1080
 
-    /** 加载状态适配器（默认[BaseLoadingAdapter]） */
+    /** 状态加载适配器（默认[BaseLoadingAdapter]） */
     var loadingAdapter: Gloading.Adapter = BaseLoadingAdapter()
 
     /**
@@ -65,16 +65,16 @@ object BaseManager {
      */
     fun setAdaptScreenValue(value: Int): BaseManager {
         if (value <= 0) {
-            throw Exception("参数应大于0")
+            throw Exception("屏幕适配参数应大于0")
         }
         adaptScreenValue = value
         return this
     }
 
     /**
-     * 设置加载状态适配器（默认[BaseLoadingAdapter]）
+     * 设置状态加载适配器（默认[BaseLoadingAdapter]）
      *
-     * @param adapter 加载状态适配器
+     * @param adapter 状态加载适配器
      *
      * @return [BaseManager]
      */
@@ -84,13 +84,13 @@ object BaseManager {
     }
 
     /**
-     * 开启日志加密
+     * 设置日志加密
      *
-     * @param password 密码
+     * @param password 密码，长度为16
      *
      * @return [BaseManager]
      */
-    fun enableLogEncryption(password: String): BaseManager {
+    fun setLogEncryption(password: String): BaseManager {
         LogUtils.getConfig().setFileWriter { file, content ->
             FileIOUtils.writeFileFromString(
                 file,
@@ -107,9 +107,9 @@ object BaseManager {
     }
 
     /**
-     * 跳转查看日志
+     * 查看日志
      *
-     * @param password 密码
+     * @param password 密码，长度为16
      */
     fun goToLog(activity: Activity, password: String) {
         activity.startActivity(Intent(activity, ViewLogActivity::class.java).apply {

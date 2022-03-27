@@ -16,6 +16,6 @@ class MainApplication : Application() {
         BaseManager.setOpenAdaptScreen(true)
             .setAdaptScreenDirection(BaseManager.Direction.WIDTH)
             .setAdaptScreenValue(1080)
-            .enableLogEncryption("1111111111111111")
+            .setLogEncryption("1111111111111111")
     }
 }

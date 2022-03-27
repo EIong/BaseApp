@@ -110,9 +110,6 @@ class ViewLogActivity : BaseActivity<ActivityViewLogBinding>() {
         return super.onOptionsItemSelected(item)
     }
 
-    /**
-     * 初始化界面
-     */
     @SuppressLint("SetTextI18n")
     private fun initView() {
         vb.apply {

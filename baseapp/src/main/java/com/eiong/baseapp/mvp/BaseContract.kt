@@ -13,19 +13,19 @@ interface BaseContract {
      */
     interface BasePresenter {
         /**
-         * 依附视图
+         * 依附View
          *
-         * @param view 依附的视图
+         * @param view 依附的View
          */
         fun attachView(lifecycleOwner: LifecycleOwner, view: BaseView)
 
         /**
-         * 分离视图
+         * 分离View
          */
         fun detachView()
 
         /**
-         * 取消所有
+         * 取消所有操作
          */
         fun cancelAll() {}
     }

@@ -10,7 +10,7 @@ import com.billy.android.loading.Gloading
 import com.eiong.baseapp.databinding.LayoutBaseLoadingBinding
 
 /**
- * 加载状态
+ * 状态加载
  *
  * @author EIong
  */
@@ -28,12 +28,12 @@ class BaseLoadingAdapter : Gloading.Adapter {
     }
 
     /**
-     * 加载视图
+     * 加载View
      *
-     * @param retryTask 重试任务
+     * @param retry 重试操作
      */
     @SuppressLint("ViewConstructor")
-    class BaseLoadingView(context: Context?, private var retryTask: Runnable?) :
+    class BaseLoadingView(context: Context?, private var retry: Runnable?) :
         LinearLayout(context), View.OnClickListener {
         private val vb = LayoutBaseLoadingBinding.inflate(LayoutInflater.from(context))
 
@@ -47,11 +47,11 @@ class BaseLoadingAdapter : Gloading.Adapter {
         /**
          * 设置加载状态：加载中、加载成功、加载失败、无数据，还可自定义其他加载状态
          *
-         * @param status    加载状态
-         * @param retryTask 重试任务
+         * @param status 加载状态
+         * @param retry  重试操作
          */
-        fun setStatus(status: Int, retryTask: Runnable?) {
-            this.retryTask = retryTask
+        fun setStatus(status: Int, retry: Runnable?) {
+            this.retry = retry
             var show = true
             vb.apply {
                 when (status) {
@@ -81,7 +81,7 @@ class BaseLoadingAdapter : Gloading.Adapter {
                 when (v) {
                     root -> {
                         if (pgbLoading.isGone) {
-                            retryTask?.run()
+                            retry?.run()
                         }
                     }
                 }

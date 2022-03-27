@@ -16,7 +16,7 @@ import java.lang.reflect.ParameterizedType
  *
  * @author EIong
  *
- * @param VB 绑定视图
+ * @param VB ViewBinding
  */
 open class BaseFragment<VB : ViewBinding> : BaseView, Fragment() {
     /** 请求权限提示 */
@@ -40,13 +40,13 @@ open class BaseFragment<VB : ViewBinding> : BaseView, Fragment() {
     /** 是否从应用设置回来 */
     private var isFromAppDetailsSettings = false
 
-    /** 根视图加载状态 */
+    /** 状态加载 */
     private lateinit var loadingHolder: Gloading.Holder
 
-    /** 多视图加载状态 */
+    /** 指定View上状态加载 */
     private val loadingHoldersOverView = hashMapOf<View, Gloading.Holder>()
 
-    /** 绑定视图对象 */
+    /** ViewBinding对象 */
     protected lateinit var vb: VB
 
     override fun onCreateView(
